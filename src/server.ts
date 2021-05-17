@@ -6,11 +6,10 @@ import path from 'path'
 import chalk from 'chalk'
 import { StatusCodes } from 'http-status-codes'
 
-import config from './config/config'
-import assets from './config/assets'
+import config from './config'
 
 import coreRoute from './routes/core'
-import uploadRoute from './routes/upload'
+import uploadRoute from './routes/sequence'
 
 /**
  * Express server
@@ -39,18 +38,8 @@ export class Server {
    * Initialize local variables
    */
   initLocalVariables() {
-    /**
-     * Setting application local variables
-     */
-    this.app.locals.title = config.app.title
-    this.app.locals.description = config.app.description
-
-    this.app.locals.jsFiles = assets.lib.js
-    this.app.locals.cssFiles = assets.lib.css
-
     // this.app.locals.favicon = config.favicon
     this.app.locals.env = process.env.NODE_ENV
-    this.app.locals.domain = config.domain
   }
 
   private initServerRoute() {
