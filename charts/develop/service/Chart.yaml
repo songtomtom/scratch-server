@@ -1,0 +1,6 @@
+version: 1.0.0
+appVersion: 0.0.1
+name: entry
+description: Helm chart for ENTRY
+source:
+  - https://git.luxrobo.net/sw-web/entry-server
